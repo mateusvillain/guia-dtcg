@@ -1,17 +1,14 @@
 :root {
-  --bg: #fff;
-  --panel: #fff;
-  --ink: #000;
-  --ink-soft: #2b2b2b;
-  --line: #000;
-  --primary: #000;
-  --focus: #000;
-  --border: #000;
-  --border-full: 2px solid var(--border);
-  --hover-bg: #eceef6;
-  --hover-alt: #f3f3f6;
-  --sans: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
-  --mono:
+  --color-light: hsl(0deg 0% 100%);
+  --color-dark: hsl(240deg 8% 12%);
+  --bg-light: var(--color-light);
+  --bg-dark: var(--color-dark);
+  --text-light: var(--color-light);
+  --text-dark: var(--color-dark);
+  --border-color: var(--color-dark);
+  --border-full: 2px solid var(--border-color);
+  --font-brand: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-code:
     'IBM Plex Mono', ui-monospace, sfmono-regular, menlo, monaco, consolas,
     monospace;
 }
@@ -48,9 +45,9 @@ select {
 }
 
 body {
-  font-family: var(--sans);
-  color: var(--ink);
-  background: var(--bg);
+  font-family: var(--font-brand);
+  color: var(--text-dark);
+  background: var(--bg-light);
   line-height: 1.5;
   padding: 6rem 0;
 }
@@ -86,13 +83,13 @@ main {
   width: auto;
   height: auto;
   z-index: 1000;
-  background: var(--bg);
+  background: var(--bg-light);
   border: var(--border-full);
   padding: 0.45rem 0.65rem;
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 3px solid var(--border-color);
   outline-offset: 3px;
 }
 
@@ -160,8 +157,8 @@ ol {
 button {
   border-radius: 0.5rem;
   padding: 0.4rem 0.72rem;
-  background: var(--primary);
-  color: var(--bg);
+  background: var(--bg-dark);
+  color: var(--text-light);
   border: var(--border-full);
   cursor: pointer;
   transition:
@@ -177,7 +174,7 @@ button:focus-visible {
 .card {
   border: var(--border-full);
   border-radius: 12px;
-  background: var(--bg);
+  background: var(--bg-light);
   padding: 0;
   overflow: hidden;
 }
@@ -193,7 +190,7 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 0.4rem;
   padding: 0.75rem 0.9rem;
-  background: var(--bg);
+  background: var(--bg-light);
   border-bottom: var(--border-full);
 }
 
@@ -212,8 +209,8 @@ input {
   border: var(--border-full);
   border-radius: 0.5rem;
   padding: 0.58rem 0.72rem;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
 select,
@@ -221,8 +218,8 @@ textarea {
   border: var(--border-full);
   border-radius: 8px;
   padding: 0.58rem 0.72rem;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
 .type-grid {
@@ -232,21 +229,20 @@ textarea {
 }
 
 code {
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 0.92rem;
 }
 
 pre {
   overflow-x: auto;
-  border: var(--border-full);
+  padding: 16px;
+  background-color: #000;
   border-radius: 8px;
-  background: var(--bg);
-  padding: 0.85rem;
-  color: var(--ink);
+  color: #fff;
 }
 
 pre code {
-  font-family: var(--mono);
+  font-family: var(--font-code);
   font-size: 0.92rem;
 }
 
@@ -283,7 +279,7 @@ pre code {
 .spec-mini {
   border: var(--border-full);
   border-radius: 10px;
-  background: var(--bg);
+  background: var(--bg-light);
   padding: 0.72rem;
 }
 
@@ -311,7 +307,7 @@ pre code {
 }
 
 .tabs [role='tab'] {
-  background: var(--bg);
+  background: var(--bg-light);
   color: var(--ink);
 }
 
@@ -338,7 +334,7 @@ pre code {
   align-items: center;
   gap: 0.9rem;
   border: var(--border-full);
-  background: var(--bg);
+  background: var(--bg-light);
   border-radius: 1rem;
   padding: 0.875rem;
 }
@@ -353,7 +349,7 @@ pre code {
 }
 
 .brand {
-  color: var(--ink);
+  color: var(--text-dark);
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -377,22 +373,22 @@ pre code {
 
 .nav-list a {
   text-decoration: none;
-  color: var(--ink);
-  background: var(--bg);
+  color: var(--text-dark);
+  background: var(--bg-light);
   border-radius: 999px;
   padding: 0.24rem 0.68rem;
   display: inline-block;
   font-weight: 600;
-  transition: background 150ms ease;
+  transition: filter 150ms ease;
 }
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-  background: var(--hover-alt);
+  filter: brightness(0.96);
 }
 
 .nav-list a[aria-current='page'] {
-  background: var(--hover-alt);
+  filter: brightness(0.96);
 }
 
 .nav-search {
@@ -416,8 +412,8 @@ pre code {
   border-right: none;
   border-radius: 0.5rem 0 0 0.5rem;
   padding: 0.4rem 0.68rem;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
 @media (width <= 680px) {
@@ -427,9 +423,10 @@ pre code {
 }
 
 .banner {
+  color: var(--text-dark);
   border: var(--border-full);
   border-radius: 12px;
-  background: var(--bg);
+  background: var(--bg-light);
   padding: 1rem;
 }
 
@@ -456,7 +453,7 @@ pre code {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background: var(--panel);
+  background: var(--bg-light);
   position: sticky;
   top: 6.2rem;
 }
@@ -481,10 +478,10 @@ pre code {
 .sidebar a {
   display: block;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--text-dark);
   border: var(--border-full);
   border-radius: 8px;
-  background: var(--bg);
+  background: var(--bg-light);
   padding: 0.42rem 0.56rem;
 }
 
@@ -496,15 +493,15 @@ pre code {
 }
 
 .tag--outline {
-  color: var(--ink);
+  color: var(--text-dark);
   border: var(--border-full);
-  background: var(--bg);
+  background: var(--bg-light);
 }
 
 .tag--solid {
-  color: var(--ink);
+  color: var(--text-dark);
   border: var(--border-full);
-  background: var(--bg);
+  background: var(--bg-light);
 }
 
 .home-topic-grid {
@@ -539,7 +536,7 @@ pre code {
 .topic-card {
   border: var(--border-full);
   border-radius: 16px;
-  background: var(--bg);
+  background: var(--bg-light);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -631,7 +628,7 @@ pre code {
 }
 
 .hero {
-  background: var(--bg);
+  background: var(--bg-light);
   padding: 2rem 0;
 }
 
@@ -676,7 +673,7 @@ pre code {
   place-items: center;
   font-weight: 700;
   color: var(--ink);
-  background: var(--bg);
+  background: var(--bg-light);
   border: var(--border-full);
 }
 
