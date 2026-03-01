@@ -1,6 +1,8 @@
 @use '../abstracts/variables' as *;
 
 .banner {
+  color: var(--text-dark);
+
   @include card-base(12px, 1rem);
 
   &--info {

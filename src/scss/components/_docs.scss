@@ -6,24 +6,6 @@
   gap: 0.8rem;
 }
 
-code {
-  font-family: var(--mono);
-  font-size: 0.92rem;
-}
-
-pre {
-  overflow-x: auto;
-
-  @include card-base(8px, 0.85rem);
-
-  color: var(--ink);
-
-  code {
-    font-family: var(--mono);
-    font-size: 0.92rem;
-  }
-}
-
 .doc-shell {
   display: grid;
   grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);

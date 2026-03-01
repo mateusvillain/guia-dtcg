@@ -15,7 +15,7 @@
   align-items: center;
   gap: 0.9rem;
   border: var(--border-full);
-  background: var(--bg);
+  background: var(--bg-light);
   border-radius: 1rem;
   padding: 0.875rem;
 
@@ -28,7 +28,7 @@
 }
 
 .brand {
-  color: var(--ink);
+  color: var(--text-dark);
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -49,21 +49,21 @@
 
   a {
     text-decoration: none;
-    color: var(--ink);
-    background: var(--bg);
+    color: var(--text-dark);
+    background: var(--bg-light);
     border-radius: 999px;
     padding: 0.24rem 0.68rem;
     display: inline-block;
     font-weight: 600;
-    transition: background 150ms ease;
+    transition: filter 150ms ease;
 
     &:hover,
     &:focus-visible {
-      background: var(--hover-alt);
+      filter: brightness(0.96);
     }
 
     &[aria-current='page'] {
-      background: var(--hover-alt);
+      filter: brightness(0.96);
     }
   }
 }
@@ -88,8 +88,8 @@
     border-right: none;
     border-radius: 0.5rem 0 0 0.5rem;
     padding: 0.4rem 0.68rem;
-    background: var(--bg);
-    color: var(--ink);
+    background: var(--bg-light);
+    color: var(--text-dark);
 
     @media (max-width: $bp-sm) {
       width: 100%;

@@ -4,8 +4,8 @@ input {
   border: var(--border-full);
   border-radius: 0.5rem;
   padding: 0.58rem 0.72rem;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
 select,
@@ -13,6 +13,6 @@ textarea {
   border: var(--border-full);
   border-radius: 8px;
   padding: 0.58rem 0.72rem;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-light);
+  color: var(--text-dark);
 }

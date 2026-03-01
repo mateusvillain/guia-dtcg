@@ -23,7 +23,7 @@
   flex-wrap: wrap;
 
   [role='tab'] {
-    background: var(--bg);
+    background: var(--bg-light);
     color: var(--ink);
 
     &[aria-selected='true'] {

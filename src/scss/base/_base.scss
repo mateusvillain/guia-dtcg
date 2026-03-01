@@ -1,9 +1,11 @@
 @use '../abstracts/variables' as *;
 
+$border-focus: 3px;
+
 body {
-  font-family: var(--sans);
-  color: var(--ink);
-  background: var(--bg);
+  font-family: var(--font-brand);
+  color: var(--text-dark);
+  background: var(--bg-light);
   line-height: 1.5;
   padding: 6rem 0;
 
@@ -36,15 +38,15 @@ main {
     width: auto;
     height: auto;
     z-index: 1000;
-    background: var(--bg);
+    background: var(--bg-light);
     border: var(--border-full);
     padding: 0.45rem 0.65rem;
   }
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
+  outline: $border-focus solid var(--border-color);
+  outline-offset: $border-focus;
 }
 
 h1,

@@ -5,14 +5,14 @@
   padding: 0.2rem 0.56rem;
 
   &--outline {
-    color: var(--ink);
+    color: var(--text-dark);
     border: var(--border-full);
-    background: var(--bg);
+    background: var(--bg-light);
   }
 
   &--solid {
-    color: var(--ink);
+    color: var(--text-dark);
     border: var(--border-full);
-    background: var(--bg);
+    background: var(--bg-light);
   }
 }
