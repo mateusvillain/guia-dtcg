@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia DTCG 2025.10</title>
+    <meta
+      name="description"
+      content="Guia em múltiplas páginas sobre o padrão DTCG 2025.10."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="floating-nav-shell">
+      <div class="floating-nav">
+        <a class="brand" href="index.html">Guia DTCG</a>
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Início</a></li>
+            <li><a href="formatacao.html">Formatação</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="resolver.html">Resolver</a></li>
+          </ul>
+        </nav>
+        <form
+          class="nav-search"
+          action="search.html"
+          method="get"
+          role="search"
+          aria-label="Buscar em todo o guia"
+        >
+          <label class="sr-only" for="global-search-index"
+            >Buscar no guia</label
+          >
+          <input
+            id="global-search-index"
+            name="q"
+            type="search"
+            placeholder="Buscar no guia"
+            required
+          />
+          <button type="submit" aria-label="Buscar">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="wrap">
+        <h1 class="title">Guia DTCG</h1>
+        <p class="hero__lead">
+          Explore o padrão em páginas separadas para facilitar estudo,
+          referência rápida e prática.
+        </p>
+      </div>
+    </header>
+
+    <main id="conteudo" class="wrap">
+      <section class="home-topic-grid" role="list" aria-label="Tópicos do guia">
+        <a
+          class="topic-card topic-card--format"
+          role="listitem"
+          href="formatacao.html"
+          aria-label="Abrir página de formatação de token"
+        >
+          <i class="ph ph-books topic-icon" aria-hidden="true"></i>
+          <div class="topic-card__content">
+            <h2 class="headline">Formatação de token</h2>
+            <p>
+              Base do padrão: estrutura, nome, sintaxe,
+              <code>$description</code>, <code>$extensions</code> e
+              <code>$deprecated</code>.
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="topic-card topic-card--resolver"
+          role="listitem"
+          href="resolver.html"
+          aria-label="Abrir página sobre resolver"
+        >
+          <i class="ph ph-file-dashed topic-icon" aria-hidden="true"></i>
+          <div class="topic-card__content">
+            <h2 class="headline">Resolver</h2>
+            <p>
+              Modele sets, contexts e resolutionOrder sem duplicar arquivos.
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="topic-card topic-card--types"
+          role="listitem"
+          href="types.html"
+          aria-label="Abrir página de types"
+        >
+          <i class="ph ph-brackets-curly topic-icon" aria-hidden="true"></i>
+          <div class="topic-card__content">
+            <h2 class="headline">Types</h2>
+            <p>Contratos de valor por tipo com exemplos aplicados.</p>
+          </div>
+        </a>
+
+        <a
+          class="topic-card topic-card--mini"
+          role="listitem"
+          href="https://www.designtokens.org/TR/2025.10/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir designtokens.org em nova aba"
+        >
+          <div class="mini-head">
+            <img src="assets/dtcg.svg" alt="" />
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </div>
+          <div class="topic-card__content">
+            <h2 class="headline">DTCG</h2>
+          </div>
+        </a>
+
+        <a
+          class="topic-card topic-card--mini"
+          role="listitem"
+          href="https://terrazzo.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir terrazzo.app em nova aba"
+        >
+          <div class="mini-head">
+            <img src="assets/terrazzo.svg" alt="" />
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </div>
+          <div class="topic-card__content">
+            <h2 class="headline">Terrazzo</h2>
+          </div>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
