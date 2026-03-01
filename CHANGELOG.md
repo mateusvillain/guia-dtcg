@@ -2,6 +2,55 @@
 
 All notable changes to this project are documented in this file.
 
+## [0.2.0] - 2026-03-01
+
+### Added in 0.2.0
+
+- New `CodeSnippet` component styles in
+  `src/scss/components/_code-snippet.scss`.
+- New card size variants: `card--md` and `card--sm`.
+
+### Changed in 0.2.0
+
+- Refactored style architecture by moving docs-related styles from
+  `src/scss/components/_docs.scss` to `src/scss/base/_base.scss`.
+- Updated design tokens and SCSS variable usage across base, components,
+  and layout layers.
+- Updated UI details for button, card, sidebar, code snippet, and home
+  topic hover states.
+- Updated Formatação page markup and layout styles, including cleanup of
+  unused classes and variable renames.
+- Updated resolver, search, and types pages to align with style changes.
+- Search button UI changed from text label to magnifier icon.
+
+### Removed in 0.2.0
+
+- Removed generated `public/css/styles.css` from version control.
+- Removed `src/scss/components/_docs.scss` after migration to base styles.
+
+### Commits in 0.2.0
+
+- `d30ca4f` refactor(styles): remove docs.scss file
+- `d6b3030` style(formatting): update Formatação page styles
+- `3344cee` feat(card): add card--md and card--sm variants
+- `004f8de` refactor(styles): move docs.scss classes to base.scss
+- `6a096ad` refactor(formatting): remove unused classes from Formatação page
+- `dba14a8` style(sidebar): update border-radius
+- `e582e0e` style(code-snippet): update component styles
+- `c31ed6d` style(card): update border-radius
+- `a443289` chore(git): ignore generated CSS files
+- `b7c4015` chore: remove compiled CSS from version control
+- `d17c174` refactor(formatting): rename variable used on Formatação page
+- `63647fd` refactor(formatting): rename variable used on Formatação page
+- `fb7f7f3` style(home): update hover styles for topics
+- `b52bf9e` refactor(styles): update SCSS files to use new variables
+- `3e374bd` refactor(styles): update SCSS files to use new variables
+- `f8837ac` refactor(tokens): update variables and remove unused ones
+- `46b4bde` feat(code-snippet): add CodeSnippet component
+- `46349a7` feat(code-snippet): add CodeSnippet component
+- `117ff65` refactor(ui): change search button from text to magnifier icon
+- `fa6ca5e` style(button): update hover and focus styles
+
 ## [0.1.0] - 2026-02-28
 
 ### Added
@@ -77,4 +126,5 @@ All notable changes to this project are documented in this file.
 - `fde2ea9` feat(styles): add search layout styles
 - `62baf55` feat(styles): add main scss entrypoint
 
+[0.2.0]: https://github.com/mateusvillain/guia-dtcg/releases/tag/v0.2.0
 [0.1.0]: https://github.com/mateusvillain/guia-dtcg/releases/tag/v0.1.0
