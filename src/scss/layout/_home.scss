@@ -47,7 +47,7 @@
   color: var(--ink);
   transition:
     transform 180ms ease,
-    background 500ms ease;
+    filter 500ms ease;
 
   @media (max-width: $bp-sm) {
     min-height: 170px;
@@ -55,8 +55,11 @@
 
   &:hover,
   &:focus-visible {
-    background: var(--hover-alt);
+    filter: brightness(0.96);
     transform: translateY(-8px);
+    transition:
+      transform 180ms ease,
+      filter 500ms ease;
   }
 
   &__content {
