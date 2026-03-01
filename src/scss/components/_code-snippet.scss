@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+
+code {
+  font-family: var(--font-code);
+  font-size: 0.92rem;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 16px;
+  background-color: #000;
+  border-radius: 8px;
+  color: #fff;
+
+  code {
+    font-family: var(--font-code);
+    font-size: 0.92rem;
+  }
+}
