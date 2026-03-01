@@ -1,0 +1,14 @@
+button {
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.72rem;
+  background: var(--primary);
+  color: var(--bg);
+  border: var(--border-full);
+  cursor: pointer;
+  transition: background 150ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--hover-alt);
+  }
+}
