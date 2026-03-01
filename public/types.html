@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Types | Guia DTCG</title>
+    <meta
+      name="description"
+      content="Resumo dos types do formato DTCG 2025.10."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="floating-nav-shell">
+      <div class="floating-nav">
+        <a class="brand" href="index.html">Guia DTCG</a>
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="formatacao.html">Formatação</a></li>
+            <li><a href="types.html" aria-current="page">Types</a></li>
+            <li><a href="resolver.html">Resolver</a></li>
+          </ul>
+        </nav>
+        <form
+          class="nav-search"
+          action="search.html"
+          method="get"
+          role="search"
+          aria-label="Buscar em todo o guia"
+        >
+          <label class="sr-only" for="global-search-types"
+            >Buscar no guia</label
+          >
+          <input
+            id="global-search-types"
+            name="q"
+            type="search"
+            placeholder="Buscar no guia"
+            required
+          />
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="wrap">
+        <h1 class="title">Types do Formato</h1>
+        <p class="hero__lead">
+          Cada type define o contrato de valor de <code>$value</code>. Aqui você
+          vê a regra e um exemplo de aplicação real lado a lado.
+        </p>
+      </div>
+    </header>
+
+    <main id="conteudo" class="wrap doc-shell">
+      <aside class="sidebar">
+        <h2>Tópicos</h2>
+        <ul>
+          <li><a href="#color">color</a></li>
+          <li><a href="#dimension">dimension</a></li>
+          <li><a href="#fontfamily">fontFamily</a></li>
+          <li><a href="#fontweight">fontWeight</a></li>
+          <li><a href="#duration">duration</a></li>
+          <li><a href="#cubicbezier">cubicBezier</a></li>
+          <li><a href="#number">number</a></li>
+          <li><a href="#additional">additional types</a></li>
+        </ul>
+      </aside>
+
+      <div class="doc-content">
+        <section
+          class="banner banner--info"
+          data-search="types overview value contrato"
+        >
+          <p>
+            <strong>Leitura rápida:</strong> se o type está correto, ferramentas
+            conseguem validar, transformar e distribuir tokens com menos
+            ambiguidade.
+          </p>
+        </section>
+
+        <section id="color" class="card" data-search="type color exemplo">
+          <header class="card__head">
+            <h2><code>color</code></h2>
+            <span class="tag tag--outline">UI Surface</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>
+                Representa cores semânticas da interface, como texto, fundo e
+                ações.
+              </p>
+              <ul class="token-notes">
+                <li>Use nomes semânticos, não nomes de cor literal.</li>
+                <li>Evita retrabalho quando a paleta visual muda.</li>
+              </ul>
+            </div>
+            <pre><code>{
+  "color": {
+    "text": { "primary": { "$type": "color", "$value": "#14213d" } }
+  }
+}
+
+.title { color: var(--color-text-primary); }</code></pre>
+          </div>
+        </section>
+
+        <section
+          id="dimension"
+          class="card"
+          data-search="type dimension exemplo"
+        >
+          <header class="card__head">
+            <h2><code>dimension</code></h2>
+            <span class="tag tag--outline">Size + Unit</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>
+                Define medidas com unidade explícita <code>px</code> ou
+                <code>rem</code>.
+              </p>
+              <ul class="token-notes">
+                <li>Ideal para espaçamentos, raio e tamanhos.</li>
+                <li>
+                  O valor precisa ser objeto com <code>value</code> e
+                  <code>unit</code>.
+                </li>
+              </ul>
+            </div>
+            <pre><code>{
+  "spacing": {
+    "md": { "$type": "dimension", "$value": { "value": 16, "unit": "px" } }
+  }
+}
+
+.card { padding: var(--spacing-md); }</code></pre>
+          </div>
+        </section>
+
+        <section
+          id="fontfamily"
+          class="card"
+          data-search="type fontfamily exemplo"
+        >
+          <header class="card__head">
+            <h2><code>fontFamily</code></h2>
+            <span class="tag tag--outline">Typography</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>Aceita string única ou lista ordenada de fallback.</p>
+              <ul class="token-notes">
+                <li>
+                  Preferir lista quando o design depende de fallback controlado.
+                </li>
+                <li>Evite misturar role de heading/body no mesmo token.</li>
+              </ul>
+            </div>
+            <pre><code>{
+  "font": {
+    "body": { "$type": "fontFamily", "$value": ["Space Grotesk", "Arial", "sans-serif"] }
+  }
+}
+
+body { font-family: var(--font-body); }</code></pre>
+          </div>
+        </section>
+
+        <section
+          id="fontweight"
+          class="card"
+          data-search="type fontweight exemplo"
+        >
+          <header class="card__head">
+            <h2><code>fontWeight</code></h2>
+            <span class="tag tag--outline">1..1000</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>
+                Peso tipográfico como inteiro de <code>1</code> a
+                <code>1000</code> ou alias como <code>bold</code>.
+              </p>
+              <ul class="token-notes">
+                <li>Numérico facilita mapeamento entre plataformas.</li>
+                <li>Alias pode ajudar legibilidade em bibliotecas de token.</li>
+              </ul>
+            </div>
+            <pre><code>{
+  "font": {
+    "heading-weight": { "$type": "fontWeight", "$value": 700 }
+  }
+}
+
+h1, h2 { font-weight: var(--font-heading-weight); }</code></pre>
+          </div>
+        </section>
+
+        <section id="duration" class="card" data-search="type duration exemplo">
+          <header class="card__head">
+            <h2><code>duration</code></h2>
+            <span class="tag tag--outline">Motion Time</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>
+                Representa tempo de transição/animação com <code>value</code> e
+                unidade <code>ms</code> ou <code>s</code>.
+              </p>
+              <ul class="token-notes">
+                <li>Mantenha escala curta, média e longa para consistência.</li>
+                <li>Evite valores arbitrários fora da escala definida.</li>
+              </ul>
+            </div>
+            <pre><code>{
+  "motion": {
+    "fast": { "$type": "duration", "$value": { "value": 180, "unit": "ms" } }
+  }
+}
+
+button { transition-duration: var(--motion-fast); }</code></pre>
+          </div>
+        </section>
+
+        <section
+          id="cubicbezier"
+          class="card"
+          data-search="type cubicbezier exemplo"
+        >
+          <header class="card__head">
+            <h2><code>cubicBezier</code></h2>
+            <span class="tag tag--outline">Easing Curve</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>
+                Curva de easing com quatro números:
+                <code>[P1x, P1y, P2x, P2y]</code>.
+              </p>
+              <ul class="token-notes">
+                <li>
+                  <code>P1x</code> e <code>P2x</code> precisam ficar entre
+                  <code>0</code> e <code>1</code>.
+                </li>
+                <li>Útil para criar assinatura de movimento do produto.</li>
+              </ul>
+            </div>
+            <pre><code>{
+  "motion": {
+    "entrance-ease": { "$type": "cubicBezier", "$value": [0.2, 0.8, 0.2, 1] }
+  }
+}
+
+.modal { transition-timing-function: var(--motion-entrance-ease); }</code></pre>
+          </div>
+        </section>
+
+        <section id="number" class="card" data-search="type number exemplo">
+          <header class="card__head">
+            <h2><code>number</code></h2>
+            <span class="tag tag--outline">Unitless</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>Número puro sem unidade, ideal para relações proporcionais.</p>
+              <ul class="token-notes">
+                <li>
+                  Use para <code>line-height</code>, opacidade e escalas
+                  matemáticas.
+                </li>
+                <li>Não inclua sufixo de unidade dentro do valor.</li>
+              </ul>
+            </div>
+            <pre><code>{
+  "text": {
+    "line-height-body": { "$type": "number", "$value": 1.5 }
+  }
+}
+
+p { line-height: var(--text-line-height-body); }</code></pre>
+          </div>
+        </section>
+
+        <section
+          id="additional"
+          class="card"
+          data-search="additional types futuro"
+        >
+          <header class="card__head">
+            <h2><code>additional types</code></h2>
+            <span class="tag tag--outline">Não normativo</span>
+          </header>
+          <div class="card__body">
+            <div>
+              <p>
+                A especificação cita possíveis evoluções, mas sem exigência
+                normativa atual.
+              </p>
+              <ul class="token-notes">
+                <li>
+                  Use apenas se seu pipeline aceitar extensões customizadas.
+                </li>
+                <li>Documente bem para facilitar migração futura.</li>
+              </ul>
+            </div>
+            <pre><code>{
+  "font": {
+    "body-style": { "$type": "fontStyle", "$value": "italic" }
+  }
+}
+
+.quote { font-style: var(--font-body-style); }</code></pre>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
