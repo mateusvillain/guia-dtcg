@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+
+$gap: 0.5rem;
+
+.sidebar {
+  @include card-base(12px, 1rem);
+
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  background: var(--panel);
+  position: sticky;
+  top: 6.2rem;
+
+  @media (max-width: $bp-md) {
+    position: static;
+  }
+
+  h2 {
+    font-size: 1.06rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: $gap;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+
+    @include card-base(8px, 0.42rem 0.56rem);
+  }
+}
