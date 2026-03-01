@@ -1,0 +1,27 @@
+:root {
+  --bg: #fff;
+  --panel: #fff;
+  --ink: #000;
+  --ink-soft: #2b2b2b;
+  --line: #000;
+  --primary: #000;
+  --focus: #000;
+  --border: #000;
+  --border-full: 2px solid var(--border);
+  --hover-bg: #eceef6;
+  --hover-alt: #f3f3f6;
+  --sans: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  --mono:
+    'IBM Plex Mono', ui-monospace, sfmono-regular, menlo, monaco, consolas,
+    monospace;
+}
+
+$bp-sm: 680px;
+$bp-md: 960px;
+
+@mixin card-base($radius: 12px, $padding: 1rem) {
+  border: var(--border-full);
+  border-radius: $radius;
+  background: var(--bg);
+  padding: $padding;
+}
