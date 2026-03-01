@@ -38,3 +38,9 @@ $spacing-3: 1rem;
   background: var(--bg-light);
   border: var(--border-full);
 }
+
+.name-sintaxe > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
