@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+
+.status {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  min-height: 2.5rem;
+  padding: 0.58rem;
+
+  &[data-ok='true'] {
+    background: #eafaf0;
+    border-color: #1f7a3d;
+  }
+
+  &[data-ok='false'] {
+    background: #fff0f0;
+    border-color: #b42318;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+
+  [role='tab'] {
+    background: var(--bg);
+    color: var(--ink);
+
+    &[aria-selected='true'] {
+      background: var(--hover-alt);
+    }
+  }
+}
+
+.split {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
