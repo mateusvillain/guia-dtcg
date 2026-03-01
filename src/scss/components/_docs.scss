@@ -1,0 +1,55 @@
+@use '../abstracts/variables' as *;
+
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.8rem;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+}
+
+pre {
+  overflow-x: auto;
+
+  @include card-base(8px, 0.85rem);
+
+  color: var(--ink);
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.92rem;
+  }
+}
+
+.doc-shell {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spec-mini {
+  @include card-base(10px, 0.72rem);
+}
