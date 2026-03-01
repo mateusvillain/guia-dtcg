@@ -1,17 +1,14 @@
 :root {
-  --bg: #fff;
-  --panel: #fff;
-  --ink: #000;
-  --ink-soft: #2b2b2b;
-  --line: #000;
-  --primary: #000;
-  --focus: #000;
-  --border: #000;
-  --border-full: 2px solid var(--border);
-  --hover-bg: #eceef6;
-  --hover-alt: #f3f3f6;
-  --sans: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
-  --mono:
+  --color-light: hsl(0deg 0% 100%);
+  --color-dark: hsl(240deg 8% 12%);
+  --bg-light: var(--color-light);
+  --bg-dark: var(--color-dark);
+  --text-light: var(--color-light);
+  --text-dark: var(--color-dark);
+  --border-color: var(--color-dark);
+  --border-full: 2px solid var(--border-color);
+  --font-brand: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-code:
     'IBM Plex Mono', ui-monospace, sfmono-regular, menlo, monaco, consolas,
     monospace;
 }
@@ -22,6 +19,6 @@ $bp-md: 960px;
 @mixin card-base($radius: 12px, $padding: 1rem) {
   border: var(--border-full);
   border-radius: $radius;
-  background: var(--bg);
+  background: var(--bg-light);
   padding: $padding;
 }
