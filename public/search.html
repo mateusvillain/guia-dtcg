@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -46,7 +50,9 @@
             placeholder="Buscar no guia"
             required
           />
-          <button type="submit">Buscar</button>
+          <button type="submit" aria-label="Buscar">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          </button>
         </form>
       </div>
     </div>
