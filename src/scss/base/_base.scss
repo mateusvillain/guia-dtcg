@@ -1,0 +1,109 @@
+@use '../abstracts/variables' as *;
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+  padding: 6rem 0;
+
+  @media (max-width: $bp-sm) {
+    padding-top: 10.4rem;
+  }
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+}
+
+.wrap {
+  width: min(800px, 92vw);
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    position: fixed;
+    top: 0.8rem;
+    left: 0.8rem;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+    background: var(--bg);
+    border: var(--border-full);
+    padding: 0.45rem 0.65rem;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
+
+.title {
+  margin: 0.2rem 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.headline {
+  font-size: clamp(1.35rem, 2.8vw, 1.5rem);
+}
+
+.topic {
+  font-size: clamp(1.05rem, 2.2vw, 1.125rem);
+}
+
+p + p,
+p + ul,
+p + ol,
+ul + p,
+ol + p,
+pre + p,
+pre + ul,
+pre + ol {
+  margin-top: 0.72rem;
+}
+
+ul,
+ol {
+  padding-left: 1.2rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
