@@ -102,6 +102,22 @@ ol {
   border: 0;
 }
 
+.doc-shell {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-content {
+  display: grid;
+  gap: 1rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
