@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formatação de Design Token | Guia DTCG</title>
+    <meta
+      name="description"
+      content="Guia de formatação geral de design tokens no padrão DTCG 2025.10."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="floating-nav-shell">
+      <div class="floating-nav">
+        <a class="brand" href="index.html">Guia DTCG</a>
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li>
+              <a href="formatacao.html" aria-current="page">Formatação</a>
+            </li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="resolver.html">Resolver</a></li>
+          </ul>
+        </nav>
+        <form
+          class="nav-search"
+          action="search.html"
+          method="get"
+          role="search"
+          aria-label="Buscar em todo o guia"
+        >
+          <label class="sr-only" for="global-search-formatacao"
+            >Buscar no guia</label
+          >
+          <input
+            id="global-search-formatacao"
+            name="q"
+            type="search"
+            placeholder="Buscar no guia"
+            required
+          />
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="wrap">
+        <h1 class="title">Formatação Geral de Design Token</h1>
+        <p class="hero__lead">
+          Uma leitura progressiva da estrutura oficial de token: o que é
+          obrigatório, o que é metadado e o que precisa de atenção na sintaxe.
+        </p>
+      </div>
+    </header>
+
+    <main id="conteudo" class="wrap doc-shell">
+      <aside class="sidebar">
+        <h2>Tópicos</h2>
+        <ul>
+          <li><a href="#visao">Visão rápida</a></li>
+          <li><a href="#estrutura">Estrutura e valor</a></li>
+          <li><a href="#sintaxe">Nome e sintaxe</a></li>
+          <li><a href="#metadados">Metadados reservados</a></li>
+          <li><a href="#exemplo">Exemplo completo</a></li>
+        </ul>
+      </aside>
+
+      <div class="doc-content">
+        <section
+          id="visao"
+          class="banner banner--info"
+          data-search="design token formatacao geral obrigatorio"
+        >
+          <p>
+            <strong>Resumo:</strong> todo token é um par
+            <code>nome + objeto</code>, e esse objeto precisa ter
+            <code>$value</code>. O restante adiciona semântica e governança.
+          </p>
+        </section>
+
+        <section
+          id="estrutura"
+          class="format card card--lg"
+          data-search="estrutura nome value obrigatorio"
+        >
+          <h2 class="headline">1. Estrutura e valor</h2>
+          <div class="rule-line">
+            <div class="rule-badge">1</div>
+            <div>
+              <h3 class="topic">Nome do token</h3>
+              <p>
+                É a chave no objeto JSON. Exemplo:
+                <code>"color-text-primary"</code>.
+              </p>
+            </div>
+          </div>
+          <div class="rule-line">
+            <div class="rule-badge">2</div>
+            <div>
+              <h3 class="topic">Corpo do token</h3>
+              <p>
+                É um objeto com propriedades reservadas do padrão. A única
+                obrigatória sempre é <code>$value</code>.
+              </p>
+            </div>
+          </div>
+          <pre><code>{
+  "color-text-primary": {
+    "$value": "#111111"
+  }
+}</code></pre>
+        </section>
+
+        <section
+          id="sintaxe"
+          class="format card card--lg"
+          data-search="nome sintaxe case sensitive caracteres proibidos"
+        >
+          <h2 class="headline">2. Nome e sintaxe</h2>
+          <div class="spec-grid">
+            <article class="spec-mini">
+              <h3 class="topic">Case-sensitive</h3>
+              <p>
+                <code>Color.Primary</code> e <code>color.primary</code> são
+                nomes diferentes em JSON.
+              </p>
+            </article>
+            <article class="spec-mini">
+              <h3 class="topic">Sem prefixo <code>$</code></h3>
+              <p>Tokens e grupos não devem começar com <code>$</code>.</p>
+            </article>
+            <article class="spec-mini">
+              <h3 class="topic">Sem <code>{ }</code> ou <code>.</code></h3>
+              <p>
+                Esses caracteres são reservados pela sintaxe do ecossistema de
+                tokens.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          id="metadados"
+          class="format card card--lg"
+          data-search="description extensions deprecated metadata"
+        >
+          <h2 class="headline">3. Metadados reservados</h2>
+          <div class="rule-line">
+            <div class="rule-badge">A</div>
+            <div>
+              <h3 class="topic"><code>$description</code></h3>
+              <p>Descrição textual opcional do propósito do token.</p>
+            </div>
+          </div>
+          <div class="rule-line">
+            <div class="rule-badge">B</div>
+            <div>
+              <h3 class="topic"><code>$extensions</code></h3>
+              <p>
+                Bloco opcional para dados proprietários. Use namespace claro,
+                como domínio reverso.
+              </p>
+            </div>
+          </div>
+          <div class="rule-line">
+            <div class="rule-badge">C</div>
+            <div>
+              <h3 class="topic"><code>$deprecated</code></h3>
+              <p>
+                Pode ser <code>true</code>, <code>false</code> ou uma string
+                explicando substituição/migração.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="exemplo"
+          class="format card card--lg"
+          data-search="exemplo completo design token"
+        >
+          <h2 class="headline">4. Exemplo completo</h2>
+          <pre><code>{
+  "color-text-primary": {
+    "$type": "color",
+    "$description": "Cor principal para leitura em superfícies padrão.",
+    "$value": "#14213d",
+    "$extensions": {
+      "com.exemplo.docs": {
+        "figmaStyleId": "S:1234"
+      }
+    },
+    "$deprecated": false
+  }
+}</code></pre>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
