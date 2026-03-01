@@ -1,0 +1,57 @@
+{
+  "name": "guia-dtcg",
+  "version": "0.1.0",
+  "description": "Guia DTCG com estrutura Sass modular.",
+  "keywords": [
+    "dtcg",
+    "design-tokens",
+    "sass",
+    "guide"
+  ],
+  "license": "MIT",
+  "author": "Mateus Villain",
+  "type": "commonjs",
+  "scripts": {
+    "prepare": "husky",
+    "build:css": "sass src/scss/main.scss public/css/styles.css --style=expanded --no-source-map",
+    "watch:css": "sass --watch src/scss/main.scss:public/css/styles.css --style=expanded --no-source-map",
+    "build": "npm run build:css"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,scss,html,json,md}": [
+      "prettier --write"
+    ],
+    "*.html": [
+      "html-validate"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix"
+    ],
+    "*.md": [
+      "markdownlint-cli2"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
+    "@eslint/css": "^0.14.1",
+    "@eslint/js": "^9.39.2",
+    "@eslint/json": "^0.14.0",
+    "@eslint/markdown": "^7.5.1",
+    "cssnano": "^7.1.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "html-validate": "^10.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "markdownlint-cli2": "^0.20.0",
+    "playwright": "^1.57.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "prettier": "^3.7.4",
+    "sass": "^1.87.0",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-scss": "^6.14.0"
+  }
+}
