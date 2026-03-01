@@ -74,6 +74,11 @@
 
   button {
     border-radius: 0 0.5rem 0.5rem 0;
+
+    &:hover,
+    &:focus-visible {
+      border-radius: 0;
+    }
   }
 
   input {

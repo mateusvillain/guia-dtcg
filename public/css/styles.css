@@ -164,12 +164,14 @@ button {
   color: var(--bg);
   border: var(--border-full);
   cursor: pointer;
-  transition: background 150ms ease;
+  transition:
+    background 150ms ease,
+    border-radius 150ms ease;
 }
 
 button:hover,
 button:focus-visible {
-  background: var(--hover-alt);
+  border-radius: 0;
 }
 
 .card {
@@ -400,6 +402,11 @@ pre code {
 
 .nav-search button {
   border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.nav-search button:hover,
+.nav-search button:focus-visible {
+  border-radius: 0;
 }
 
 .nav-search input {

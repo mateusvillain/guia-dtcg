@@ -5,10 +5,12 @@ button {
   color: var(--bg);
   border: var(--border-full);
   cursor: pointer;
-  transition: background 150ms ease;
+  transition:
+    background 150ms ease,
+    border-radius 150ms ease;
 
   &:hover,
   &:focus-visible {
-    background: var(--hover-alt);
+    border-radius: 0;
   }
 }
