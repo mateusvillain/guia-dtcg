@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+
+.banner {
+  @include card-base(12px, 1rem);
+
+  &--info {
+    background: #d5e4fa;
+  }
+
+  &--warning {
+    background: #fff4d6;
+  }
+
+  &--danger {
+    background: #ffe6e6;
+  }
+
+  &--success {
+    background: #e6ffe6;
+  }
+}
