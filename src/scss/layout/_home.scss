@@ -1,0 +1,128 @@
+@use '../abstracts/variables' as *;
+
+.home-topic-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    'format format resolver resolver'
+    'format format types types'
+    'dtcg terrazzo types types';
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'format resolver'
+      'types types'
+      'dtcg terrazzo';
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'format'
+      'resolver'
+      'types'
+      'dtcg'
+      'terrazzo';
+  }
+
+  .topic-card--mini:nth-of-type(4) {
+    grid-area: dtcg;
+  }
+
+  .topic-card--mini:nth-of-type(5) {
+    grid-area: terrazzo;
+  }
+}
+
+.topic-card {
+  @include card-base(16px, 1rem);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 190px;
+  text-decoration: none;
+  color: var(--ink);
+  transition:
+    transform 180ms ease,
+    background 500ms ease;
+
+  @media (max-width: $bp-sm) {
+    min-height: 170px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--hover-alt);
+    transform: translateY(-8px);
+  }
+
+  &__content {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+.topic-icon,
+.mini-head i {
+  font-size: 1.5rem;
+  color: #9ea0ab;
+}
+
+.topic-card--format {
+  grid-area: format;
+  min-height: 320px;
+
+  @media (max-width: $bp-md) {
+    min-height: 220px;
+  }
+
+  @media (max-width: $bp-sm) {
+    min-height: 170px;
+  }
+}
+
+.topic-card--resolver {
+  grid-area: resolver;
+}
+
+.topic-card--types {
+  grid-area: types;
+  min-height: 320px;
+
+  @media (max-width: $bp-md) {
+    min-height: 220px;
+  }
+
+  @media (max-width: $bp-sm) {
+    min-height: 170px;
+  }
+}
+
+.topic-card--mini {
+  min-height: 150px;
+}
+
+.mini-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.hero {
+  background: var(--bg);
+  padding: 2rem 0;
+
+  @media (max-width: $bp-sm) {
+    padding-top: 1.8rem;
+  }
+}
