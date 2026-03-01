@@ -2,18 +2,18 @@
 
 code {
   font-family: var(--font-code);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
 }
 
 pre {
   overflow-x: auto;
-  padding: 16px;
-  background-color: #000;
-  border-radius: 8px;
-  color: #fff;
+  padding: 1rem;
+  background-color: var(--bg-dark);
+  border-radius: 0.5rem;
+  color: var(--text-light);
 
   code {
     font-family: var(--font-code);
-    font-size: 0.92rem;
+    font-size: 0.875rem;
   }
 }
