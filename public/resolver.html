@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resolver | Guia DTCG</title>
+    <meta
+      name="description"
+      content="Guia de construção do resolver DTCG 2025.10."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="floating-nav-shell">
+      <div class="floating-nav">
+        <a class="brand" href="index.html">Guia DTCG</a>
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="formatacao.html">Formatação</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="resolver.html" aria-current="page">Resolver</a></li>
+          </ul>
+        </nav>
+        <form
+          class="nav-search"
+          action="search.html"
+          method="get"
+          role="search"
+          aria-label="Buscar em todo o guia"
+        >
+          <label class="sr-only" for="global-search-resolver"
+            >Buscar no guia</label
+          >
+          <input
+            id="global-search-resolver"
+            name="q"
+            type="search"
+            placeholder="Buscar no guia"
+            required
+          />
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="wrap">
+        <h1>Resolver: conceito e criação</h1>
+        <p class="hero__lead">
+          Como combinar sets e modifiers por contexto usando
+          <code>resolutionOrder</code>.
+        </p>
+      </div>
+    </header>
+
+    <main id="conteudo" class="wrap">
+      <section data-search="resolver o que faz entrada processo saida">
+        <h2>O que o resolver faz</h2>
+        <ul>
+          <li>
+            <strong>Entrada:</strong> parâmetros de contexto (ex.:
+            <code>theme=dark</code>, <code>contrast=high</code>).
+          </li>
+          <li>
+            <strong>Processo:</strong> valida parâmetros, aplica fontes conforme
+            a ordem, resolve aliases.
+          </li>
+          <li>
+            <strong>Saída:</strong> conjunto final de tokens para a combinação
+            de contextos.
+          </li>
+        </ul>
+      </section>
+
+      <section
+        data-search="estrutura resolver sets modifiers contexts default resolutionOrder"
+      >
+        <h2>Estrutura básica</h2>
+        <pre><code id="resolver-code">{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "version": "2025.10",
+  "sets": {
+    "base": { "sources": [{ "color": { "text": { "primary": { "$type": "color", "$value": "#111111" } } } }] }
+  },
+  "modifiers": {
+    "theme": {
+      "contexts": {
+        "light": [{ "color": { "background": { "$type": "color", "$value": "#FFFFFF" } } }],
+        "dark": [{ "color": { "background": { "$type": "color", "$value": "#121212" } } }]
+      },
+      "default": "light"
+    }
+  },
+  "resolutionOrder": [
+    { "$ref": "#/sets/base" },
+    { "$ref": "#/modifiers/theme" }
+  ]
+}</code></pre>
+        <button
+          class="copy-block"
+          data-copy-target="resolver-code"
+          type="button"
+        >
+          Copiar estrutura
+        </button>
+      </section>
+
+      <section data-search="como criar passo a passo">
+        <h2>Como criar</h2>
+        <ol>
+          <li>Comece por um set base com tokens comuns.</li>
+          <li>
+            Adicione modifiers para variáveis de contexto (tema, contraste,
+            densidade etc.).
+          </li>
+          <li>Defina contexto padrão em cada modifier.</li>
+          <li>
+            Ordene composição em <code>resolutionOrder</code> do mais base ao
+            mais específico.
+          </li>
+          <li>
+            Teste combinações de contextos para validar conflitos e overrides.
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="js/init-copy-blocks.js"></script>
+  </body>
+</html>
