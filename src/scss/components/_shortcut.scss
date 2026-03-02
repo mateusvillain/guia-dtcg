@@ -1,14 +1,3 @@
-.search-input-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-
-  & input {
-    padding-right: 4.3rem;
-  }
-}
-
 .shortcut {
   position: absolute;
   right: 0.5rem;
@@ -33,9 +22,5 @@
 @media (width <= 680px) {
   .shortcut {
     display: none;
-  }
-
-  .search-input-wrap input {
-    padding-right: 0.72rem;
   }
 }
