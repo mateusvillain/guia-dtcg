@@ -2,6 +2,35 @@
 
 All notable changes to this project are documented in this file.
 
+## [0.3.0] - 2026-03-02
+
+### Added in 0.3.0
+
+- Keyboard shortcut support for search focus:
+  - `Cmd+K` on macOS.
+  - `Ctrl+K` on Windows/Linux.
+- New shortcut styles in `src/scss/components/_shortcut.scss`.
+- New search shortcut initializer script in
+  `public/js/init-search-shortcut.js`.
+
+### Changed in 0.3.0
+
+- Sidebar navigation cleanup by removing the "Visão geral" menu item.
+- Sidebar anchor scrolling behavior adjusted.
+- Search input UI updated across pages to support shortcut hint visuals.
+
+### Merged PRs in 0.3.0
+
+- [#2](https://github.com/mateusvillain/guia-dtcg/pull/2)
+  Add search shortcut (Cmd+K / Ctrl+K)
+
+### Commits in 0.3.0
+
+- `7f4e66c` Merge branch `main` from `origin`
+- `fb7a574` Add search shortcut (Cmd+K / Ctrl+K) (#2)
+- `cf6953b` refactor(sidebar): adjust anchor scroll behavior
+- `9a9e4fd` refactor(sidebar): remove 'Visão geral' menu item
+
 ## [0.2.0] - 2026-03-01
 
 ### Added in 0.2.0
@@ -126,5 +155,6 @@ All notable changes to this project are documented in this file.
 - `fde2ea9` feat(styles): add search layout styles
 - `62baf55` feat(styles): add main scss entrypoint
 
+[0.3.0]: https://github.com/mateusvillain/guia-dtcg/releases/tag/v0.3.0
 [0.2.0]: https://github.com/mateusvillain/guia-dtcg/releases/tag/v0.2.0
 [0.1.0]: https://github.com/mateusvillain/guia-dtcg/releases/tag/v0.1.0
