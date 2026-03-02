@@ -1,0 +1,26 @@
+.shortcut {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: var(--border-full);
+  border-radius: 0.5rem;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 0.12rem 0.36rem;
+  pointer-events: none;
+  user-select: none;
+
+  & .shortcut-mod {
+    margin-right: 0.12rem;
+  }
+}
+
+@media (width <= 680px) {
+  .shortcut {
+    display: none;
+  }
+}
