@@ -10,6 +10,23 @@
   font-size: 0.94rem;
 }
 
+.search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  & input {
+    padding-right: 4.3rem;
+  }
+
+  @media (width <= 680px) {
+    & input {
+      padding-right: 0.72rem;
+    }
+  }
+}
+
 .actions,
 .playground__controls,
 .sim-controls {
