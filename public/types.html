@@ -43,13 +43,18 @@
           <label class="sr-only" for="global-search-types"
             >Buscar no guia</label
           >
-          <input
-            id="global-search-types"
-            name="q"
-            type="search"
-            placeholder="Buscar no guia"
-            required
-          />
+          <div class="search-input-wrap">
+            <input
+              id="global-search-types"
+              name="q"
+              type="search"
+              placeholder="Buscar no guia"
+              required
+            />
+            <kbd class="shortcut" aria-hidden="true"
+              ><span class="shortcut-mod" data-shortcut-mod>⌘</span>K</kbd
+            >
+          </div>
           <button type="submit" aria-label="Buscar">
             <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
           </button>
@@ -330,5 +335,6 @@ p { line-height: var(--text-line-height-body); }</code></pre>
         </section>
       </div>
     </main>
+    <script src="js/init-search-shortcut.js"></script>
   </body>
 </html>
