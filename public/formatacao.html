@@ -45,13 +45,18 @@
           <label class="sr-only" for="global-search-formatacao"
             >Buscar no guia</label
           >
-          <input
-            id="global-search-formatacao"
-            name="q"
-            type="search"
-            placeholder="Buscar no guia"
-            required
-          />
+          <div class="search-input-wrap">
+            <input
+              id="global-search-formatacao"
+              name="q"
+              type="search"
+              placeholder="Faça uma busca"
+              required
+            />
+            <kbd class="shortcut" aria-hidden="true"
+              ><span class="shortcut-mod" data-shortcut-mod>⌘</span>K</kbd
+            >
+          </div>
           <button type="submit" aria-label="Buscar">
             <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
           </button>
@@ -73,7 +78,6 @@
       <aside class="sidebar">
         <h2>Tópicos</h2>
         <ul>
-          <li><a href="#visao">Visão rápida</a></li>
           <li><a href="#estrutura">Estrutura e valor</a></li>
           <li><a href="#sintaxe">Nome e sintaxe</a></li>
           <li><a href="#metadados">Metadados reservados</a></li>
@@ -83,7 +87,6 @@
 
       <div class="doc-content">
         <section
-          id="visao"
           class="banner banner--info"
           data-search="design token formatacao geral obrigatorio"
         >
@@ -212,5 +215,6 @@
         </section>
       </div>
     </main>
+    <script src="js/init-search-shortcut.js"></script>
   </body>
 </html>

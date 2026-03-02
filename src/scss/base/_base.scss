@@ -1,6 +1,12 @@
 @use '../abstracts/variables' as *;
 
 $border-focus: 3px;
+$anchor-offset: 3.1rem;
+$anchor-offset-mobile: 11rem;
+
+html {
+  scroll-padding-top: $anchor-offset;
+}
 
 body {
   font-family: var(--font-brand);
@@ -116,6 +122,10 @@ ol {
 .doc-content {
   display: grid;
   gap: 1rem;
+
+  [id] {
+    scroll-margin-top: $anchor-offset;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -123,5 +133,17 @@ ol {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  html {
+    scroll-padding-top: $anchor-offset-mobile;
+  }
+
+  .doc-content {
+    [id] {
+      scroll-margin-top: $anchor-offset-mobile;
+    }
   }
 }
